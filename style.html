@@ -484,6 +484,43 @@ section{
   font-size:14px;
 }
 
+/* LANGUAGES */
+
+.languages-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.language-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.06);
+  backdrop-filter:blur(12px);
+  padding:35px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.language-card:hover{
+  transform:translateY(-10px);
+  border-color:#00bcd4;
+}
+
+.language-card i{
+  font-size:42px;
+  color:#00bcd4;
+  margin-bottom:20px;
+}
+
+.language-card h3{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.language-card p{
+  color:#b8c0dd;
+}
 /* CONTACT */
 
 .contact-grid{
@@ -1009,6 +1046,65 @@ responsive layouts, and smooth animations.
 </div>
 
 </section>
+
+<!-- LANGUAGES -->
+
+<section id="languages">
+
+<div class="section-title">
+
+<span>05 — LANGUAGES</span>
+
+<h2># Languages</h2>
+
+</div>
+
+<div class="languages-grid">
+
+<div class="language-card">
+
+<i class="fa-solid fa-language"></i>
+
+<h3>Kannada</h3>
+
+<p>Native Proficiency</p>
+
+</div>
+
+<div class="language-card">
+
+<i class="fa-solid fa-language"></i>
+
+<h3>English</h3>
+
+<p>Professional Working Proficiency</p>
+
+</div>
+
+<div class="language-card">
+
+<i class="fa-solid fa-language"></i>
+
+<h3>Hindi</h3>
+
+<p>Intermediate Proficiency</p>
+
+</div>
+
+<div class="language-card">
+
+<i class="fa-solid fa-language"></i>
+
+<h3>Telugu</h3>
+
+<p>Conversational Proficiency</p>
+
+</div>
+
+</div>
+
+</section>
+
 
 <!-- CONTACT -->
 
