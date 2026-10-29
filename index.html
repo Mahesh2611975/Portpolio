@@ -1,1245 +1,751 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahesh Yadav | Python Backend Developer & GenAI</title>
+  <meta name="description" content="Mahesh Yadav's portfolio featuring Python Backend Development, FastAPI, Generative AI, Machine Learning, RAG, and software projects.">
+  <meta name="keywords" content="Mahesh Yadav, Python Developer, FastAPI, Django, GenAI, RAG, Machine Learning">
+  <meta name="author" content="Mahesh Yadav">
+  <meta name="theme-color" content="#070b14">
 
-  <title>Mahesh Yadav | Python Backend Developer</title>
-  <meta name="description"
-content="Mahesh Yadav Full Stack Developer Portfolio">
-
-<meta name="keywords"
-content="Mahesh Yadav, Portfolio, Full Stack Developer, Python Developer">
-
-<meta name="author"
-content="Mahesh Yadav">
-
-  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
-  <!-- TYPED JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-  <!-- SCROLL REVEAL -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#070b14;
-  color:white;
-  font-family:'Poppins',sans-serif;
-  overflow-x:hidden;
-}
-
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-  width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-  background:#00bcd4;
-}
-
-/* BACKGROUND */
-
-body::before{
-  content:'';
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:
-  radial-gradient(circle at top left,#0f172a 0%,transparent 40%),
-  radial-gradient(circle at bottom right,#00bcd422 0%,transparent 35%);
-  z-index:-2;
-}
-
-body::after{
-  content:'';
-  position:fixed;
-  width:100%;
-  height:100%;
-  background-image:
-  linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size:60px 60px;
-  z-index:-1;
-}
-
-/* NAVBAR */
-
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:22px 8%;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(12px);
-  z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.logo{
-  font-size:28px;
-  font-weight:700;
-  color:white;
-}
-
-.logo span{
-  color:#00bcd4;
-}
-
-.nav-links{
-  display:flex;
-  gap:35px;
-  list-style:none;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:#c8d0f0;
-  font-size:14px;
-  letter-spacing:1px;
-  transition:0.3s;
-}
-
-.nav-links a:hover{
-  color:#00bcd4;
-}
-
-.resume-btn{
-  text-decoration:none;
-  background:#00bcd4;
-  color:black;
-  padding:14px 28px;
-  border-radius:8px;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.resume-btn:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 25px #00bcd4;
-}
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:150px 8% 100px;
-  gap:80px;
-}
-
-.hero-left{
-  flex:1;
-}
-
-.small-title{
-  color:#00bcd4;
-  letter-spacing:3px;
-  font-size:15px;
-  font-weight:600;
-}
-
-.hero-left h1{
-  margin-top:20px;
-  font-size:72px;
-  line-height:1.1;
-  font-weight:800;
-}
-
-.hero-left h1 span{
-  color:#00bcd4;
-}
-
-.typing{
-  margin-top:25px;
-  font-size:28px;
-  color:#00ffcc;
-  min-height:40px;
-}
-
-.hero-desc{
-  margin-top:30px;
-  color:#a7b1d1;
-  line-height:1.9;
-  max-width:650px;
-  font-size:18px;
-}
-
-.hero-buttons{
-  margin-top:40px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.hero-buttons a{
-  text-decoration:none;
-  padding:16px 32px;
-  border-radius:8px;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.primary-btn{
-  background:#00bcd4;
-  color:black;
-}
-
-.primary-btn:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 25px #00bcd4;
-}
-
-.outline-btn{
-  border:1px solid #2c334f;
-  color:white;
-}
-
-.outline-btn:hover{
-  border-color:#00bcd4;
-  color:#00bcd4;
-}
-
-/* SOCIAL */
-
-.social-icons{
-  display:flex;
-  gap:18px;
-  margin-top:35px;
-}
-
-.social-icons a{
-  width:50px;
-  height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  border:1px solid #28304d;
-  color:white;
-  transition:0.3s;
-}
-
-.social-icons a:hover{
-  background:#00bcd4;
-  color:black;
-  transform:translateY(-5px);
-}
-
-/* HERO RIGHT */
-
-.hero-right{
-  flex:1;
-  display:flex;
-  justify-content:center;
-}
-
-.hero-card{
-  width:400px;
-  height:500px;
-  border-radius:25px;
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(15px);
-  border:1px solid rgba(255,255,255,0.08);
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-}
-
-.hero-card::before{
-  content:'';
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:#00bcd433;
-  border-radius:50%;
-  filter:blur(90px);
-}
-
-.hero-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:2;
-}
-
-/* COMMON */
-
-section{
-  padding:110px 8%;
-}
-
-.section-title{
-  margin-bottom:70px;
-}
-
-.section-title span{
-  color:#00bcd4;
-  letter-spacing:3px;
-  font-size:14px;
-  font-weight:600;
-}
-
-.section-title h2{
-  margin-top:15px;
-  font-size:52px;
-  font-weight:700;
-}
-
-/* ABOUT */
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-}
-
-.about-card{
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.06);
-  padding:40px;
-  border-radius:20px;
-}
-
-.about-card h3{
-  font-size:28px;
-  margin-bottom:20px;
-}
-
-.about-card p{
-  color:#b8c0dd;
-  line-height:1.9;
-  margin-bottom:20px;
-}
-
-/* STATS */
-
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-
-.stat-box{
-  background:#111827;
-  border:1px solid #232b45;
-  padding:35px;
-  border-radius:18px;
-  transition:0.3s;
-}
-
-.stat-box:hover{
-  transform:translateY(-10px);
-  border-color:#00bcd4;
-}
-
-.stat-box i{
-  font-size:32px;
-  color:#00bcd4;
-  margin-bottom:18px;
-}
-
-.stat-box h4{
-  font-size:20px;
-}
-
-/* SKILLS */
-
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-
-.skill-card{
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.06);
-  padding:35px;
-  border-radius:18px;
-  transition:0.3s;
-}
-
-.skill-card:hover{
-  transform:translateY(-10px);
-  border-color:#00bcd4;
-}
-
-.skill-card h3{
-  margin-bottom:20px;
-  color:#00bcd4;
-}
-
-.skill-card ul{
-  list-style:none;
-}
-
-.skill-card li{
-  margin-bottom:12px;
-  color:#b8c0dd;
-}
-
-/* PROJECTS */
-
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-  gap:30px;
-}
-
-.project-card{
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:20px;
-  overflow:hidden;
-  transition:0.4s;
-}
-
-.project-card:hover{
-  transform:translateY(-12px);
-  border-color:#00bcd4;
-}
-
-.project-img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-}
-
-.project-content{
-  padding:30px;
-}
-
-.project-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:20px;
-}
-
-.project-tags span{
-  background:#0f172a;
-  border:1px solid #26304e;
-  padding:8px 14px;
-  border-radius:6px;
-  color:#00ffcc;
-  font-size:12px;
-}
-
-.project-content h3{
-  font-size:28px;
-  margin-bottom:20px;
-}
-
-.project-content p{
-  color:#b8c0dd;
-  line-height:1.8;
-}
-
-.project-links{
-  display:flex;
-  gap:20px;
-  margin-top:25px;
-}
-
-.project-links a{
-  text-decoration:none;
-  color:#00bcd4;
-  font-weight:600;
-}
-
-/* EDUCATION */
-
-.education-card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.06);
-  padding:35px;
-  border-radius:20px;
-  margin-bottom:25px;
-}
-
-.education-card h3{
-  margin-bottom:10px;
-}
-
-.education-card span{
-  color:#00bcd4;
-  font-size:14px;
-}
-
-/* LANGUAGES */
-
-.languages-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.language-card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.06);
-  backdrop-filter:blur(12px);
-  padding:35px;
-  border-radius:20px;
-  text-align:center;
-  transition:0.3s;
-}
-
-.language-card:hover{
-  transform:translateY(-10px);
-  border-color:#00bcd4;
-}
-
-.language-card i{
-  font-size:42px;
-  color:#00bcd4;
-  margin-bottom:20px;
-}
-
-.language-card h3{
-  font-size:24px;
-  margin-bottom:12px;
-}
-
-.language-card p{
-  color:#b8c0dd;
-}
-/* CONTACT */
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-}
-
-.contact-box{
-  background:rgba(255,255,255,0.04);
-  padding:40px;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.06);
-}
-
-.contact-box h3{
-  margin-bottom:20px;
-}
-
-.contact-box p{
-  color:#b8c0dd;
-  line-height:1.9;
-}
-
-.contact-form input,
-.contact-form textarea{
-  width:100%;
-  padding:18px;
-  margin-bottom:20px;
-  border-radius:10px;
-  background:#111827;
-  border:1px solid #27304d;
-  color:white;
-  outline:none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-  border-color:#00bcd4;
-}
-
-.contact-form button{
-  background:#00bcd4;
-  color:black;
-  border:none;
-  padding:16px 35px;
-  border-radius:8px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  padding:40px;
-  border-top:1px solid rgba(255,255,255,0.06);
-  color:#9ea8ca;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1100px){
-
-.hero{
-  flex-direction:column;
-}
-
-.about-grid,
-.contact-grid{
-  grid-template-columns:1fr;
-}
-
-.hero-left h1{
-  font-size:56px;
-}
-
-}
-
-@media(max-width:800px){
-
-.navbar{
-  flex-direction:column;
-  gap:20px;
-}
-
-.nav-links{
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.hero-left h1{
-  font-size:46px;
-}
-
-.section-title h2{
-  font-size:38px;
-}
-
-.stats-grid{
-  grid-template-columns:1fr;
-}
-
-}
-
-</style>
-
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #070b14;
+      --card: rgba(255,255,255,.045);
+      --cyan: #00bcd4;
+      --green: #00ffcc;
+      --text: #f5f7ff;
+      --muted: #a7b1d1;
+      --border: rgba(255,255,255,.09);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at top left, #14203b, transparent 40%),
+        radial-gradient(circle at bottom right, #00bcd422, transparent 35%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(#ffffff08 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 8%;
+      background: #070b14eF;
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo span, .accent { color: var(--cyan); }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 13px;
+      color: #d3daef;
+      transition: .3s;
+    }
+
+    .nav-links a:hover { color: var(--cyan); }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
+      border: 1px solid var(--cyan);
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: #061018;
+    }
+
+    .btn-outline { color: white; }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 22px #00bcd444;
+    }
+
+    section { padding: 100px 8%; scroll-margin-top: 80px; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding-top: 140px;
+    }
+
+    .hero-left { flex: 1.3; }
+
+    .eyebrow {
+      color: var(--cyan);
+      letter-spacing: 3px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .typing {
+      min-height: 42px;
+      color: var(--green);
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 600;
+    }
+
+    .hero-desc {
+      margin: 22px 0;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .hero-buttons, .social-icons, .project-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .social-icons a:hover {
+      background: var(--cyan);
+      color: #061018;
+      transform: translateY(-4px);
+    }
+
+    .hero-right {
+      flex: 0 1 350px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      width: 300px;
+      height: 360px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--card);
+      overflow: hidden;
+      box-shadow: 0 0 70px #00bcd41a;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section-heading { margin-bottom: 40px; }
+
+    .section-heading span {
+      color: var(--cyan);
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .section-heading h2 {
+      margin-top: 8px;
+      font-size: clamp(30px, 4vw, 44px);
+    }
+
+    .section-heading p {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .about-grid, .skills-grid, .projects-grid, .education-grid,
+    .languages-grid, .contact-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .about-grid { grid-template-columns: 1.4fr 1fr; }
+    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+    .education-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .languages-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 28px;
+      transition: .3s;
+      min-width: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00bcd477;
+    }
+
+    .card h3 { margin-bottom: 12px; }
+
+    .card p, .card li { color: var(--muted); }
+
+    .card-icon {
+      color: var(--cyan);
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .skill-list { list-style: none; }
+
+    .skill-list li { margin: 8px 0; }
+
+    .skill-list li::before {
+      content: "▹ ";
+      color: var(--cyan);
+    }
+
+    .project-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-banner {
+      height: 130px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #10263c, #101827, #003c49);
+      color: var(--cyan);
+      font-size: 42px;
+    }
+
+    .project-content {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-content p { margin: 10px 0; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 12px 0;
+    }
+
+    .tags span {
+      padding: 4px 9px;
+      border-radius: 5px;
+      font-size: 11px;
+      color: var(--green);
+      background: #0f172a;
+      border: 1px solid #26304e;
+    }
+
+    .project-links { margin-top: auto; padding-top: 12px; }
+
+    .project-links a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .project-links a:hover { color: var(--green); }
+
+    .education-card .year {
+      color: var(--cyan);
+      font-size: 13px;
+    }
+
+    .language-card { text-align: center; }
+    .language-card i { color: var(--cyan); font-size: 30px; margin-bottom: 12px; }
+
+    .contact-info p { margin: 14px 0; overflow-wrap: anywhere; }
+    .contact-info i { color: var(--cyan); width: 25px; }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #111827;
+      color: white;
+      font: inherit;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: 1px solid var(--cyan);
+    }
+
+    .contact-form button {
+      cursor: pointer;
+      font: inherit;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 8%;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    footer a { color: var(--cyan); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .navbar { position: absolute; flex-wrap: wrap; justify-content: center; }
+      .nav-links { justify-content: center; gap: 15px; }
+      .hero { flex-direction: column-reverse; text-align: center; padding-top: 190px; }
+      .hero-buttons, .social-icons { justify-content: center; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-right { flex-basis: auto; }
+      .hero-card { width: 230px; height: 260px; }
+    }
+
+    @media (max-width: 500px) {
+      section { padding: 75px 6%; }
+      .navbar { padding: 15px 5%; }
+      .nav-links a { font-size: 12px; }
+      .logo { font-size: 21px; }
+      .btn { padding: 10px 15px; }
+      .card { padding: 22px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
 <header class="navbar">
+  <div class="logo">Mahesh <span>Yadav</span></div>
 
-<div class="logo">
-  Mahesh <span>Yadav</span>
-</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<ul class="nav-links">
-
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-<a href="resume.pdf" download class="resume-btn">
-  Resume
-</a>
-
+  <a class="btn btn-primary" href="resume.pdf" target="_blank">Resume</a>
 </header>
 
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-left">
-
-<span class="small-title">
-FULL STACK DEVELOPER
-</span>
-
-<h1>
-Building Modern <span>Digital</span><br>
-Experiences
-</h1>
-
-<div class="typing">
-<span id="typed"></span>
-</div>
-
-<p class="hero-desc">
-
-Computer Science undergraduate and Full Stack Developer
-specializing in scalable backend systems, AI-powered applications,
-Machine Learning, and modern web technologies.
-
-Focused on building production-ready applications using
-FastAPI, Django, PostgreSQL, React, and cloud-native architectures.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#projects" class="primary-btn">
-View Projects
-</a>
-
-<a href="#contact" class="outline-btn">
-Hire Me
-</a>
-
-</div>
-
-<div class="social-icons">
-
-<a href="https://github.com/Mahesh2611975" target="_blank">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/mahesh-yadav-90a90131a/">
-<i class="fab fa-linkedin"></i>
-</a>
-
-<a href="mailto:my0254620@gmail.com">
-<i class="fa-solid fa-envelope"></i>
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="hero-card">
-
-<img src="profile.jpg" alt="Mahesh Yadav">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="section-title">
-
-
-
-<h2>About Me</h2>
-
-</div>
-
-<div class="about-grid">
-
-<div class="about-card">
-
-<h3>Professional Summary</h3>
-
-<p>
-
-Backend-focused Full Stack Developer passionate about scalable APIs,
-machine learning systems, and modern web applications.
-
-</p>
-
-<p>
-
-Experienced in FastAPI, Django, PostgreSQL, MongoDB,
-Machine Learning pipelines, anomaly detection systems,
-and responsive frontend engineering.
-
-</p>
-
-<p>
-
-Interested in AI systems, cloud computing,
-microservices architecture, and production-grade software engineering.
-
-</p>
-
-</div>
-
-<div class="stats-grid">
-
-<div class="stat-box">
-<i class="fa-solid fa-server"></i>
-<h4>Backend Development</h4>
-</div>
-
-<div class="stat-box">
-<i class="fa-solid fa-brain"></i>
-<h4>Machine Learning</h4>
-</div>
-
-<div class="stat-box">
-<i class="fa-solid fa-database"></i>
-<h4>Database Systems</h4>
-</div>
-
-<div class="stat-box">
-<i class="fa-solid fa-cloud"></i>
-<h4>Cloud Foundations</h4>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<div class="section-title">
-
-
-
-<h2>Technical Skills</h2>
-
-</div>
-
-<div class="skills-grid">
-
-<div class="skill-card">
-
-<h3>Backend</h3>
-
-<ul>
-<li>FastAPI</li>
-<li>Django</li>
-<li>REST APIs</li>
-<li>Microservices</li>
-<li>Authentication Systems</li>
-</ul>
-
-</div>
-
-<div class="skill-card">
-
-<h3>Machine Learning</h3>
-
-<ul>
-<li>Data Analysis</li>
-<li>Scikit-Learn</li>
-<li>Isolation Forest</li>
-<li>Pandas</li>
-<li>NumPy</li>
-<li>Seaborn</li>
-<li>Matplotlib</li>
-</ul>
-
-</div>
-
-<div class="skill-card">
-
-<h3>Databases</h3>
-
-<ul>
-<li>PostgreSQL</li>
-<li>MongoDB</li>
-<li>SQL</li>
-<li>Database Design</li>
-</ul>
-
-</div>
-
-<div class="skill-card">
-
-<h3>Frontend & Tools</h3>
-
-<ul>
-<li>HTML5</li>
-<li>CSS3</li>
-<li>JavaScript</li>
-<li>React.js</li>
-<li>Tailwind CSS</li>
-<li>Git & GitHub</li>
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<div class="section-title">
-
-
-
-<h2>Featured Projects</h2>
-
-</div>
-
-<div class="projects-grid">
-
-<!-- PROJECT 1 -->
-
-<div class="project-card">
-
-<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4"
-class="project-img">
-
-<div class="project-content">
-
-<div class="project-tags">
-
-<span>FastAPI</span>
-<span>Machine Learning</span>
-<span>Blockchain</span>
-
-</div>
-
-<h3>CredoLocal</h3>
-
-<p>
-
-AI-powered microfinance loan approval platform built using FastAPI,
-Machine Learning models, and anomaly detection systems.
-
-</p>
-
-<div class="project-links">
-
-<a href="https://credo-local.vercel.app/">Live Demo</a>
-<a href="https://github.com/Mahesh2611975/CredoLocal">GitHub</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PROJECT 2 -->
-
-<div class="project-card">
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
-class="project-img">
-
-<div class="project-content">
-
-<div class="project-tags">
-
-<span>Django</span>
-<span>DRF</span>
-<span>Automation</span>
-
-</div>
-
-<h3>Enagar Seva</h3>
-
-<p>
-
-Smart municipal complaint management platform using Django,
-Celery, and intelligent routing systems.
-
-</p>
-
-<div class="project-links">
-
-<a href="https://enagar-seva.vercel.app/">Live Demo</a>
-<a href="https://github.com/Mahesh2611975/e-nagar-seva">GitHub</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PROJECT 3 -->
-
-<div class="project-card">
-
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-class="project-img">
-
-<div class="project-content">
-
-<div class="project-tags">
-
-<span>Portfolio</span>
-<span>UI/UX</span>
-<span>Responsive</span>
-
-</div>
-
-<h3>Developer Portfolio</h3>
-
-<p>
-
-Professional modern portfolio website with glassmorphism UI,
-responsive layouts, and smooth animations.
-
-</p>
-
-<div class="project-links">
-
-<a href="#">Live Demo</a>
-<a href="#">GitHub</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- EDUCATION -->
-
-<section id="education">
-
-<div class="section-title">
-
-
-
-<h2>Education</h2>
-
-</div>
-
-<div class="education-card">
-
-<span>2023 — 2027</span>
-
-<h3>B.Tech — Computer Science & Engineering</h3>
-
-<p>Sharnbasva University</p>
-
-</div>
-
-<div class="education-card">
-
-<span>2020 — 2022</span>
-
-<h3>Higher Secondary Education</h3>
-
-<p>DR Channabaseveshwar Gurukula PU College Kardyal, Bhalki</p>
-
-</div>
-
-<div class="education-card">
-
-<span>2018 — 2020</span>
-
-<h3>Secondary School Education</h3>
-
-<p>SRI Marul Siddeshwar High School Mudbi, Basavakalyan</p>
-
-</div>
-
-</section>
-
-<!-- LANGUAGES -->
-
-<section id="languages">
-
-<div class="section-title">
-
-
-
-<h2># Languages</h2>
-
-</div>
-
-<div class="languages-grid">
-
-<div class="language-card">
-
-<i class="fa-solid fa-language"></i>
-
-<h3>Kannada</h3>
-
-<p>Native Proficiency</p>
-
-</div>
-
-<div class="language-card">
-
-<i class="fa-solid fa-language"></i>
-
-<h3>English</h3>
-
-<p>Professional Working Proficiency</p>
-
-</div>
-
-<div class="language-card">
-
-<i class="fa-solid fa-language"></i>
-
-<h3>Hindi</h3>
-
-<p>Intermediate Proficiency</p>
-
-</div>
-
-<div class="language-card">
-
-<i class="fa-solid fa-language"></i>
-
-<h3>Telugu</h3>
-
-<p>Conversational Proficiency</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<div class="section-title">
-
-
-
-<h2>Get In Touch</h2>
-
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-box">
-
-<h3>Let's Connect</h3>
-
-<p>
-
-I am actively looking for internships,
-backend development roles,
-and software engineering opportunities.
-
-</p>
-
-<br>
-
-<p>
-📧 Email: my0254620@gmail.com
-</p>
-
-<p>
-📍 Karnataka, India
-</p>
-
-<p>
-💻 GitHub: github.com/Mahesh2611975
-</p>
-
-</div>
-
-<form class="contact-form">
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<textarea rows="6" placeholder="Your Message"></textarea>
-
-<button type="submit">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
+<main>
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <span class="eyebrow">PYTHON BACKEND DEVELOPER</span>
+
+      <h1>Building Reliable<br><span class="accent">Digital Solutions.</span></h1>
+
+      <div class="typing"><span id="typed"></span></div>
+
+      <p class="hero-desc">
+        I'm a Computer Science and Engineering student passionate about
+        backend engineering, Generative AI, Machine Learning, and building
+        practical applications. I work with Python, FastAPI, Django,
+        databases, and modern web technologies.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#projects">Explore Projects</a>
+        <a class="btn btn-outline" href="#contact">Contact Me</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://github.com/Mahesh2611975" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mahesh-yadav-90a90131a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:my0254620@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://instagram.com/mahesh_yadav_2611" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <img src="profile.jpg" alt="Mahesh Yadav">
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-heading">
+      <span>INTRODUCTION</span>
+      <h2>About <span class="accent">Me</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="card">
+        <h3>Professional Summary</h3>
+        <p>
+          I'm a CSE student focused on Python backend development and
+          intelligent applications. My interests include API design,
+          database systems, Machine Learning, Generative AI, RAG, and LLMs.
+        </p>
+        <br>
+        <p>
+          I enjoy building end-to-end projects, learning new technologies,
+          and solving real-world problems through software engineering.
+          I'm looking for opportunities to grow as a backend and AI engineer.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>My Focus</h3>
+        <ul class="skill-list">
+          <li>Backend APIs and authentication</li>
+          <li>Database design and integration</li>
+          <li>Machine Learning applications</li>
+          <li>Generative AI and RAG exploration</li>
+          <li>Maintainable software development</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-heading">
+      <span>MY TOOLKIT</span>
+      <h2>Technical <span class="accent">Skills</span></h2>
+      <p>Technologies I use and continue to learn.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="card">
+        <i class="fas fa-server card-icon"></i>
+        <h3>Backend Engineering</h3>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>Django and Flask</li>
+          <li>REST APIs</li>
+          <li>JWT Authentication</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-database card-icon"></i>
+        <h3>Databases</h3>
+        <ul class="skill-list">
+          <li>PostgreSQL</li>
+          <li>SQLite</li>
+          <li>MySQL</li>
+          <li>MongoDB</li>
+          <li>SQL and data modeling</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-brain card-icon"></i>
+        <h3>AI and Machine Learning</h3>
+        <ul class="skill-list">
+          <li>Scikit-learn</li>
+          <li>Pandas and NumPy</li>
+          <li>Data analysis</li>
+          <li>Generative AI and LLMs</li>
+          <li>RAG and AI agents — learning</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-code card-icon"></i>
+        <h3>Frontend and Tools</h3>
+        <ul class="skill-list">
+          <li>HTML, CSS, JavaScript</li>
+          <li>React</li>
+          <li>Git and GitHub</li>
+          <li>VS Code and Postman</li>
+          <li>Docker fundamentals</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-heading">
+      <span>WHAT I'VE BUILT</span>
+      <h2>Featured <span class="accent">Projects</span></h2>
+      <p>Applications focused on backend engineering, AI, and real-world workflows.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="card project-card">
+        <div class="project-banner"><i class="fas fa-file-invoice-dollar"></i></div>
+        <div class="project-content">
+          <h3>FinAudit AI</h3>
+          <div class="tags">
+            <span>Python</span><span>FastAPI</span><span>SQLite</span><span>React</span><span>Ollama</span>
+          </div>
+          <p>
+            A financial reconciliation application designed to identify
+            unmatched transactions, analyze discrepancies, and support
+            financial investigations.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Mahesh2611975?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-banner"><i class="fas fa-building"></i></div>
+        <div class="project-content">
+          <h3>BuildTrack AI</h3>
+          <div class="tags">
+            <span>Backend APIs</span><span>Database</span><span>Analytics</span><span>PDF Reports</span>
+          </div>
+          <p>
+            A project and resource management system for employees, tasks,
+            attendance, inventory, expenses, equipment, dashboards, and reports.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/Mahesh2611975?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-banner"><i class="fas fa-hand-holding-dollar"></i></div>
+        <div class="project-content">
+          <h3>CredoLocal</h3>
+          <div class="tags">
+            <span>Python</span><span>FastAPI</span><span>ML</span><span>PostgreSQL</span><span>Blockchain</span>
+          </div>
+          <p>
+            An AI-powered microfinance platform designed for loan eligibility
+            analysis, credit risk assessment, EMI calculations, lender matching,
+            and privacy-conscious SMS feature extraction.
+          </p>
+          <div class="project-links">
+            <a href="https://credo-local.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/Mahesh2611975/CredoLocal" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-banner"><i class="fas fa-city"></i></div>
+        <div class="project-content">
+          <h3>Enagar Seva</h3>
+          <div class="tags">
+            <span>Django</span><span>Automation</span><span>Web Application</span>
+          </div>
+          <p>
+            A municipal complaint management application concept for organizing
+            citizen complaints and supporting efficient issue routing.
+          </p>
+          <div class="project-links">
+            <a href="https://enagar-seva.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/Mahesh2611975/e-nagar-seva" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-banner"><i class="fas fa-laptop-code"></i></div>
+        <div class="project-content">
+          <h3>Developer Portfolio</h3>
+          <div class="tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span>
+          </div>
+          <p>
+            A personal portfolio showcasing my skills, projects, education,
+            and contact information with a dark futuristic design.
+          </p>
+          <div class="project-links">
+            <a href="https://mahesh2611975.github.io/Portpolio/" target="_blank" rel="noopener noreferrer">Live Portfolio <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/Mahesh2611975/Portpolio" target="_blank" rel="noopener noreferrer">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-heading">
+      <span>MY JOURNEY</span>
+      <h2>Education</h2>
+    </div>
+
+    <div class="education-grid">
+      <div class="card education-card">
+        <div class="year">2023 – 2027</div>
+        <h3>B.Tech — Computer Science & Engineering</h3>
+        <p>Sharnbasva University</p>
+      </div>
+
+      <div class="card education-card">
+        <div class="year">2020 – 2022</div>
+        <h3>Higher Secondary Education</h3>
+        <p>DR Channabaseveshwar Gurukula PU College, Kardyal, Bhalki</p>
+      </div>
+
+      <div class="card education-card">
+        <div class="year">2018 – 2020</div>
+        <h3>Secondary School Education</h3>
+        <p>Sri Marul Siddeshwar High School, Mudbi, Basavakalyan</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <div class="section-heading">
+      <span>COMMUNICATION</span>
+      <h2>Languages</h2>
+    </div>
+
+    <div class="languages-grid">
+      <div class="card language-card">
+        <i class="fas fa-language"></i>
+        <h3>Kannada</h3>
+        <p>Known</p>
+      </div>
+      <div class="card language-card">
+        <i class="fas fa-language"></i>
+        <h3>English</h3>
+        <p>Known</p>
+      </div>
+      <div class="card language-card">
+        <i class="fas fa-language"></i>
+        <h3>Hindi</h3>
+        <p>Known</p>
+      </div>
+      <div class="card language-card">
+        <i class="fas fa-language"></i>
+        <h3>Telugu</h3>
+        <p>Known</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-heading">
+      <span>LET'S CONNECT</span>
+      <h2>Get In <span class="accent">Touch</span></h2>
+      <p>Interested in backend development, GenAI, and software engineering opportunities.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="card contact-info">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:my0254620@gmail.com">my0254620@gmail.com</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/Mahesh2611975" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mahesh-yadav-90a90131a/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+        <p><i class="fas fa-location-dot"></i> Karnataka, India</p>
+      </div>
+
+      <div class="card">
+        <h3>Send Me a Message</h3>
+        <p style="margin-bottom:18px">
+          Contact me by email to discuss projects, internships, or opportunities.
+        </p>
+        <a class="btn btn-primary"
+           href="mailto:my0254620@gmail.com?subject=Portfolio%20Enquiry">
+          <i class="fas fa-paper-plane"></i> Email Me
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-
-<h3>Mahesh Yadav</h3>
-
-<br>
-
-<p>
-Full Stack Developer | AI Enthusiast
-</p>
-
-<br>
-
-<p>
-© 2026 All Rights Reserved
-</p>
-
+  <h3>Mahesh <span class="accent">Yadav</span></h3>
+  <p>Python Backend Developer | Generative AI Enthusiast</p>
+  <p>&copy; 2026 Mahesh Yadav. Built with passion and code.</p>
+  <p><a href="#home">Back to top ↑</a></p>
 </footer>
 
-<!-- TYPED JS -->
-
 <script>
-
-var typed = new Typed("#typed",{
-
-strings:[
-"Full Stack Developer",
-"Backend Developer",
-"Machine Learning Enthusiast",
-"Problem Solver"
-],
-
-typeSpeed:60,
-backSpeed:40,
-backDelay:1500,
-loop:true
-
-});
-
-</script>
-
-<!-- SCROLL ANIMATION -->
-
-<script>
-
-ScrollReveal().reveal('.project-card',{
-distance:'60px',
-duration:1500,
-interval:200,
-origin:'bottom'
-});
-
-ScrollReveal().reveal('.skill-card',{
-distance:'60px',
-duration:1500,
-interval:150,
-origin:'bottom'
-});
-
-ScrollReveal().reveal('.about-card',{
-distance:'60px',
-duration:1500,
-origin:'left'
-});
-
+  if (typeof Typed !== "undefined") {
+    new Typed("#typed", {
+      strings: [
+        "Python Backend Developer",
+        "FastAPI & Django Developer",
+        "Machine Learning Enthusiast",
+        "Exploring GenAI & RAG"
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1400,
+      loop: true
+    });
+  }
 </script>
 
 </body>
